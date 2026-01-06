@@ -1,10 +1,10 @@
-FROM node:14-bullseye AS builder
+FROM node:25.2.1-bullseye AS builder
 COPY . /tmp/src
 WORKDIR /tmp/src
 RUN yarn install
 RUN yarn build
 
-FROM node:14-bullseye
+FROM node:25.2.1-bullseye
 
 RUN mkdir /data
 WORKDIR /app
